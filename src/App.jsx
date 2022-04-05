@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DisplayPost from './components/displayPost';
-import CreatePost from './components/createPost';
+import CreatePost from './components/CreatePost/createPostform';
 import Posts from './components/post';
 
 
@@ -23,3 +23,12 @@ function App() {
 
 
 export default App;
+
+
+//*This MAIN APP will contain
+//^SocialFeed background by CSS
+//& The (Create Post) having the UserInput and the create button
+//~ The display all created post with -name of user -post made 
+//~ and -"like and display button(toggle) -date of created post"
+//TODO have post submit to the new feeds.
+ 
