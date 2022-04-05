@@ -10,19 +10,18 @@ const CreatePostForm = (props) => {
     const [userName, setUserName] = useState('');
     const [userPost, setUserPost] = useState('');
 
-    function handleSubmit(formEvent){
-      formEvent.preventDefault();
+    function handleSubmit(event){
+      event.preventDefault();
+      let newPost ={
+        Name: userName,
+        Post: userPost
+      };
+      console.log(newPost);
+      props.createComment(newPost);
       alert(`${userName}, your post has been created`);
     }
 
-//?    return (
-//?      <form>
-//?        <label>Name</label>
-//?        <input type = 'Name'/>
-//?        <label>Post</label>
-//?        <input Post = ''/>
-//?        <label></label>
-//?        <button type = 'submit'>Create</button> 
+
     return(
        <form onSubmit={handleSubmit}>
           <label>Name</label>
@@ -35,8 +34,7 @@ const CreatePostForm = (props) => {
         </form>  
 
        );
-      //?</form>
-   //? );
+      
   }
   
   

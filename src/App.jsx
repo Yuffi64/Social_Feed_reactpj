@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DisplayPost from './components/displayPost';
-import CreatePost from './components/CreatePost/createPostform';
+import CreatePost from './components/CreatePost/CreatePostForm';
 import Posts from './components/post';
 
 
@@ -8,13 +8,22 @@ import Posts from './components/post';
 
 function App() {
 
-  const [media, setMedia] = useState([{}])
+  const [media, setMedia] = useState([{name:'Sam I Am', post:'I am Hungry'}])
+
+  function addPost(feed){
+
+    let postFeed = [feed, ...media];
+
+    setMedia(postFeed);
+  }
+
+
   return (
     <div>
       <h1>This is the Main App</h1>
 
-      <DisplayPost />
-      <CreatePost />
+      <DisplayPost parentPost={media}/>
+      <CreatePost createComment={addPost}/>
       <Posts/>
     </div>
   );
