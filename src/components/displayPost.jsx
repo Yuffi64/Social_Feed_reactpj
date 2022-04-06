@@ -1,41 +1,33 @@
-// * This component will display a single post 
-//!DISPLAY IS THE PARENT OF CREATE POST
-
 import React from "react";
+import Post from "./Post";
 
 const DisplayPost = (props) => {
 
-  return (
+  return(
     <div>
-      <header>
-        {props.parentPost.map((entry)=> {
-          return (
-          <list>  
-            <l1>{entry.name}</l1>  
-            <l1>{entry.post}</l1>
+      <div className="header">
 
-          </list>
-          );
-        })} 
-      </header>
-     
-     
-     
-      <main>
-        <list>
-          <h1>News Feed</h1>
-        </list>
-      </main>
+      </div>
+    
 
 
-
-      <footer>
-      </footer>
+      <div className="Display">
+        {props.parentsMedia.map((feed) => {
+          return(
+            <div>
+              <Post feed={feed}/>
+              <ul>{feed.Name}</ul>
+              <ul>{feed.Post}</ul>
+            </div>
+          )
+        })}
+      </div>
+       
+         
+      
 
 
     </div>
-
-
 
   );
 
@@ -43,4 +35,3 @@ const DisplayPost = (props) => {
      
   
   export default DisplayPost;
-  

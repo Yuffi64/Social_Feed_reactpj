@@ -9,34 +9,41 @@ const CreatePostForm = (props) => {
     //  but we are doing to test functionality for now.
     const [userName, setUserName] = useState('');
     const [userPost, setUserPost] = useState('');
+  
 
-    function handleSubmit(event){
-      event.preventDefault();
-      let newPost ={
-        Name: userName,
-        Post: userPost
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const newPost = { 
+        Name: userName, 
+        Post: userPost,
+        
       };
+
       console.log(newPost);
-      props.createComment(newPost);
-      alert(`${userName}, your post has been created`);
+      props.addNewPost(newPost);
+      
     }
 
 
     return(
+    
+       
+       
        <form onSubmit={handleSubmit}>
           <label>Name</label>
-          <input type = 'text' onChange={(event) => setUserName(event.target.value)} value={userName}/>
+          <input type = 'text' value={userName} onChange={(e) => setUserName(e.target.value)} />
           <label>Post</label>
-          <input type = 'text' onChange={(event) => setUserPost(event.target.value)} value={userPost}/>
+          <input type = 'text' value={userPost} onChange={(e) => setUserPost(e.target.value)} />
           <label></label>
           <button type = 'Submit'>Create</button> 
           
         </form>  
+    
+    );
+    
+   
 
-       );
-      
+
   }
-  
-  
-  
+    
   export default CreatePostForm;

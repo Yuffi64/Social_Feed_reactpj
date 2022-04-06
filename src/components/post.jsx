@@ -1,16 +1,21 @@
 import React from "react";
 
-function Posts() {
+
+const Post = (props) => {
+
+  
 
 
     return (
-      <div>
-        <h1>This will be the post</h1>
+      <div className="groupPost">
+        <h4>{props.feed.name}</h4>
+        <h8>{props.feed.post}</h8>  
+
       </div>
     );
   }
   
   
   
-  export default Posts;
+  export default Post;
   
