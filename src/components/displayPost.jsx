@@ -16,16 +16,14 @@ const DisplayPost = (props) => {
           return(
             <div>
               <Post feed={feed}/>
-              <ul>{feed.Name}</ul>
-              <ul>{feed.Post}</ul>
+              
             </div>
           )
         })}
       </div>
-       
+     
          
-      
-
+    
 
     </div>
 
