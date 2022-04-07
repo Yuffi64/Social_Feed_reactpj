@@ -5,7 +5,7 @@ const DisplayPost = (props) => {
 
   return(
     <div>
-      <div className="header">
+      <div className="container" key={props.parentsMedia.length}>
 
       </div>
     

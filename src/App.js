@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DisplayPost from './components/DisplayPost';
 import CreatePost from './components/CreatePost/CreatePostForm';
+import './App.css';
 
 
 //Dont forget to follow I.C.E (Import, Component, Export)//
@@ -26,9 +27,13 @@ const App = (props) => {
 
         </div>
       </div>
-      
-      <CreatePost addNewPost={addPost}/>
+      <div className="border-box">
+      <CreatePost addNewPost={addPost}/> 
+      </div>
+      <div className="border-box">
       <DisplayPost parentsMedia={media}/>
+      </div>
+      
      
       
     
